@@ -4,7 +4,7 @@ import java.util.List;
 
 import learning.mvc.modules.user.types.dto.CreateUserInputDto;
 import learning.mvc.modules.user.types.models.User;
-import learning.mvc.shared.helpers.CustomErrors;
+import learning.mvc.shared.helpers.Validation;
 
 public class CreateUser {
     private final List<User> users;
@@ -16,16 +16,9 @@ public class CreateUser {
     }
 
     public void validateInput() {
-        if (input == null)
-            throw CustomErrors.bodyIsRequired();
-        validateField("name", input.getName());
-        validateField("lastname", input.getLastname());
-        validateField("email", input.getEmail());
-    }
-
-    public void validateField(String field, String value) {
-        if (value == null || value.isEmpty())
-            throw CustomErrors.fieldIsRequired(field);
+        Validation.fieldIsRequired("name", input.getName());
+        Validation.fieldIsRequired("lastname", input.getLastname());
+        Validation.fieldIsRequired("email", input.getEmail());
     }
 
     public User buildUser() {

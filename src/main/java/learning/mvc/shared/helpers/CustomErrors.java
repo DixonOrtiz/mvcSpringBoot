@@ -10,12 +10,6 @@ public class CustomErrors {
                 String.format("user with id: %d not found", id));
     }
 
-    static public ResponseStatusException bodyIsRequired() {
-        return new ResponseStatusException(
-                HttpStatus.BAD_REQUEST,
-                String.format("request body is required"));
-    }
-
     static public ResponseStatusException fieldIsRequired(String field) {
         return new ResponseStatusException(
                 HttpStatus.BAD_REQUEST,

@@ -1,4 +1,4 @@
-package learning.mvc.models;
+package learning.mvc.modules.user.types.models;
 
 public class User {
     private int id;

@@ -3,11 +3,14 @@ package learning.mvc.modules.user.layers.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import learning.mvc.modules.user.layers.service.helpers.createUser.CreateUser;
 import learning.mvc.modules.user.types.dto.CreateUserInputDto;
 import learning.mvc.modules.user.types.models.User;
 import learning.mvc.shared.helpers.CustomErrors;
 
+@Component
 public class UserService {
     private List<User> users;
 
